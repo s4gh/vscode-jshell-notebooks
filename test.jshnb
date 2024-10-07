@@ -1,0 +1,7 @@
+```java
+int a = 2;
+```
+
+```java
+show(a);
+```
