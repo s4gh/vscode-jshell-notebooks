@@ -2,14 +2,25 @@
 
 This plugin provides support for notebools which can have markdown documentation cells and code cells. It uses JShell to evaluate code snippets
 
+# Features
+- Interactive notebooks where you can have combination of code cells and markdown cells
+- Code editor with
+    - Syntax highligh
+    - Code completion
+    - Hints about errors in code snoppets
+![Code editor features](/images/features.png)
+- Abilityt to set/change classapth in runtime - use ```/env --class-path /path-to-library1.jar:/path-to-library2.jar:...``` code to set classparh. On Windows ```;``` is used as class path entries separator
+- Apache Flink support
+![Flink support|100](/images/flink-support.png)
+
 # Preparation
 
 - Install the extension
 - Install Plugin which renders JSON output as table https://github.com/RandomFractals/vscode-data-table
 - Optionally install 
-Plugin to render dfferent visualtaions of data in jupyper format https://github.com/Microsoft/vscode-notebook-renderers (not currently used. There are plans to use it in future)
+Plugin to render dfferent visualtaions of data in jupyper format https://github.com/Microsoft/vscode-notebook-renderers (not currently used. There are plans to use it in future to support visualization of data as charts)
 
-## Use
+# Example
 
 - create file with .jshnb file, "Open With..."
 - Select "JShell Notebook"
@@ -17,7 +28,120 @@ Plugin to render dfferent visualtaions of data in jupyper format https://github.
 - Create cell with the command to set flink class path:
 
 ```
-/env --class-path /home/serhiy/.m2/repository/org/apache/flink/flink-clients/1.20.0/flink-clients-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-core/1.20.0/flink-core-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-core-api/1.20.0/flink-core-api-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-metrics-core/1.20.0/flink-metrics-core-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-annotations/1.20.0/flink-annotations-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-shaded-asm-9/9.5-17.0/flink-shaded-asm-9-9.5-17.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-shaded-jackson/2.14.2-17.0/flink-shaded-jackson-2.14.2-17.0.jar:/home/serhiy/.m2/repository/org/snakeyaml/snakeyaml-engine/2.6/snakeyaml-engine-2.6.jar:/home/serhiy/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/home/serhiy/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar:/home/serhiy/.m2/repository/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar:/home/serhiy/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/serhiy/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/serhiy/.m2/repository/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-runtime/1.20.0/flink-runtime-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-rpc-core/1.20.0/flink-rpc-core-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-rpc-akka-loader/1.20.0/flink-rpc-akka-loader-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-queryable-state-client-java/1.20.0/flink-queryable-state-client-java-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-hadoop-fs/1.20.0/flink-hadoop-fs-1.20.0.jar:/home/serhiy/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.91.Final-17.0/flink-shaded-netty-4.1.91.Final-17.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-shaded-zookeeper-3/3.7.1-17.0/flink-shaded-zookeeper-3-3.7.1-17.0.jar:/home/serhiy/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/home/serhiy/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.4/snappy-java-1.1.10.4.jar:/home/serhiy/.m2/repository/tools/profiler/async-profiler/2.9/async-profiler-2.9.jar:/home/serhiy/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-optimizer/1.20.0/flink-optimizer-1.20.0.jar:/home/serhiy/.m2/repository/commons-cli/commons-cli/1.5.0/commons-cli-1.5.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-datastream/1.20.0/flink-datastream-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-datastream-api/1.20.0/flink-datastream-api-1.20.0.jar:/home/serhiy/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/serhiy/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-api-java-bridge/1.20.0/flink-table-api-java-bridge-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-api-java/1.20.0/flink-table-api-java-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-api-bridge-base/1.20.0/flink-table-api-bridge-base-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-java/1.20.0/flink-java-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/serhiy/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/serhiy/.m2/repository/com/twitter/chill-java/0.7.6/chill-java-0.7.6.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-streaming-java/1.20.0/flink-streaming-java-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-file-sink-common/1.20.0/flink-file-sink-common-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-shaded-guava/31.1-jre-17.0/flink-shaded-guava-31.1-jre-17.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-connector-datagen/1.20.0/flink-connector-datagen-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-runtime/1.20.0/flink-table-runtime-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-common/1.20.0/flink-table-common-1.20.0.jar:/home/serhiy/.m2/repository/com/ibm/icu/icu4j/67.1/icu4j-67.1.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-cep/1.20.0/flink-cep-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-connector-files/1.20.0/flink-connector-files-1.20.0.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-table-planner_2.12/1.20.0/flink-table-planner_2.12-1.20.0.jar:/home/serhiy/.m2/repository/org/immutables/value/2.8.8/value-2.8.8.jar:/home/serhiy/.m2/repository/org/immutables/value-annotations/2.8.8/value-annotations-2.8.8.jar:/home/serhiy/.m2/repository/org/codehaus/janino/commons-compiler/3.1.10/commons-compiler-3.1.10.jar:/home/serhiy/.m2/repository/org/codehaus/janino/janino/3.1.10/janino-3.1.10.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-scala_2.12/1.20.0/flink-scala_2.12-1.20.0.jar:/home/serhiy/.m2/repository/org/scala-lang/scala-reflect/2.12.7/scala-reflect-2.12.7.jar:/home/serhiy/.m2/repository/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.jar:/home/serhiy/.m2/repository/org/scala-lang/scala-compiler/2.12.7/scala-compiler-2.12.7.jar:/home/serhiy/.m2/repository/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar:/home/serhiy/.m2/repository/com/twitter/chill_2.12/0.7.6/chill_2.12-0.7.6.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-csv/1.20.0/flink-csv-1.20.0.jar
+/env --class-path /home/user/.m2/repository/org/apache/flink/flink-clients/1.20.0/flink-clients-1.20.0.jar: ... :/home/user/.m2/repository/org/apache/flink/flink-csv/1.20.0/flink-csv-1.20.0.jar
+```
+If you have Maven project with Flink dependencies set you can print classpath by running ```mvn dependency:build-classpath``` command.
+Also you can copy Maven project dependencies into separate directory by running ```mvn dependency:copy-dependencies -DoutputDirectory=/home/target-dir``` command.
+You can use these command to generate class path which you can use in this notebook plugin to set Flink classpath.
+Example of basic pom.xml file with Flink dependencies is below. You may need to add more dependencies (e.g. flink-avro or other libraries).
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>flink-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flink.version>1.20.0</flink.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-api-java-bridge</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-runtime</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-files</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-planner_2.12</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-csv</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
+```
+- Add cell with sample Flink code. Example below used remote axecution environment and expects that Flink is started as a separate process
+
+```java
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.table.api.*;
+import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
+import org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl;
+import org.apache.flink.table.types.DataType;
+import org.apache.flink.types.Row;
+
+import java.util.HashMap;
+import java.util.List;
+
+        Configuration conf = new Configuration();
+        StreamExecutionEnvironment senv = StreamExecutionEnvironment.createRemoteEnvironment(
+                "127.0.0.1",
+                8081,
+                null);
+        StreamTableEnvironment tableEnv = StreamTableEnvironmentImpl.create(senv, EnvironmentSettings.newInstance().withConfiguration(conf).build());
+
+
+        DataType rowType = DataTypes.ROW(
+                DataTypes.FIELD("NAME", DataTypes.STRING()),
+                DataTypes.FIELD("ADDRESS", DataTypes.STRING())
+        );
+
+        Table sampleTable = tableEnv.fromValues(
+                rowType,
+                Row.of("Alice Johnson", "123 Main St, Anytown"),
+                Row.of("Bob Smith", "456 Oak Ave, Somewhere"),
+                Row.of("Charlie Brown", "789 Pine Rd, Elsewhere")
+        );
+
+        tableEnv.createTemporaryView("people", sampleTable);
+
+        Table result = tableEnv.from("people");
+        
+        showTable(result);
+```
+- Execute cells
+
+# Notes
+Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. ala-library-2.12.7.jar:/home/serhiy/.m2/repository/org/scala-lang/scala-compiler/2.12.7/scala-compiler-2.12.7.jar:/home/serhiy/.m2/repository/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar:/home/serhiy/.m2/repository/com/twitter/chill_2.12/0.7.6/chill_2.12-0.7.6.jar:/home/serhiy/.m2/repository/org/apache/flink/flink-csv/1.20.0/flink-csv-1.20.0.jar
 ```
 - Add cell with sample Flink code. Example below used remote axecution environment and expects that Flink is started as a separate process
 
