@@ -7,7 +7,7 @@ This plugin provides support for notebools which can have markdown documentation
 - Code editor with
     - Syntax highligh
     - Code completion
-    - Hints about errors in code snoppets
+    - Hints about errors in code snippets
 ![Code editor features](https://raw.githubusercontent.com/s4gh/vscode-jshell-notebooks/refs/heads/main/images/features.png)
 - Abilityt to set/change classapth in runtime - use ```/env --class-path /path-to-library1.jar:/path-to-library2.jar:...``` code to set classparh. On Windows ```;``` is used as class path entries separator
 - Apache Flink support
