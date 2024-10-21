@@ -5,7 +5,7 @@ This plugin provides support for notebools which can have markdown documentation
 # Features
 - Interactive notebooks where you can have combination of code cells and markdown cells
 - Code editor with
-    - Syntax highligh
+    - Syntax highlight
     - Code completion
     - Hints about errors in code snippets
 ![Code editor features](https://raw.githubusercontent.com/s4gh/vscode-jshell-notebooks/refs/heads/main/images/features.png)
