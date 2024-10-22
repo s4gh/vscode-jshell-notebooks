@@ -1,6 +1,6 @@
 {
 	"name": "vscode-jshell-notebook",
-	"publisher": "s4gh",
+	"publisher": "s4ghms",
 	"icon": "images/icon.png",
 	"displayName": "JShell Notebook",
 	"description": "An extension for editing jshell and markdown files in VS Code notebooks",
