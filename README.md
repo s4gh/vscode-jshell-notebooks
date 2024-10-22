@@ -1,6 +1,6 @@
 # JShell Notebook
 
-This plugin provides support for notebools which can have markdown documentation cells and code cells. It uses JShell to evaluate code snippets
+This plugin provides support for notebooks which can have markdown documentation cells and code cells. It uses JShell to evaluate code snippets
 
 # Features
 - Interactive notebooks where you can have combination of code cells and markdown cells
